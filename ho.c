@@ -572,10 +572,12 @@ void qifei(void) {
                         xianshid();
                     }    else if ((d2 == 1 || d1 == 1 || d4 == 1) && count == 6 && d3 < 0 && d3 < 55) {
                             d3 = 0;
+                            xianshid();
                             sujishu();//获得机会
                             qifei();//重新选择
                         } else if (count == 6 && d3 < 0 && 3 < 55) {
                                 d3 = 1;
+                                xianshid();
                                 sujishu();//获得机会
                                 qifei();//重新选择
                             } else if (d3 == 55){
@@ -595,7 +597,7 @@ void qifei(void) {
                             d4 = tianxing(d4);
                             }
                     win();
-                    xianshib();
+                    xianshid();
                     sujishu();//获得机会
                     qifei();//重新选择
                 }  else if (d4 >= 0 && d4 < 55) {
@@ -628,43 +630,46 @@ void qifei(void) {
         }
     }
     if (green == 3 && eeeee != 1) {
-        printf("yellow选择编号");
+        printf("green选择编号");
         do {
             scanf("%d", &hao);
         } while (hao > 4 || hao <= 0);
         switch (hao) {
             case 1:
-                if(d1>= 0 && d1 < 55 && count == 6) {
-                    if (d1 + count <= 55) {
-                        d1 += count;
-                        d1 += kiki(d1);
+                if(c1>= 0 && c1 < 55 && count == 6) {
+                    if (c1 + count <= 55) {
+                        c1 += count;
+                        c1 += kiki(c1);
                         } else {
-                            d1 = tianxing(d1);
+                            c1 = tianxing(c1);
                             }
                     win();
-                    xianshid();
+                    xianshic();
+                    outg();
                     sujishu();//获得机会
                     qifei();//重新选择
-                }  else if (d1 >= 0 && d1 < 55) {
-                    if (d1 + count <= 55) {
-                        d1 += count;
-                        d1 += kiki(d1);
+                }  else if (c1 >= 0 && c1 < 55) {
+                    if (c1 + count <= 55) {
+                        c1 += count;
+                        c1 += kiki(c1);
                         } else {
-                            d1 = tianxing(d1);
+                            c1 = tianxing(c1);
                             }
                         win();
-                        xianshid();
-                    }    else if ((d2 == 1 || d3 == 1 || d4 == 1) && count == 6 && d1 < 0 && d1 < 55) {
-                            d1 = 0;
-                            xianshid();
+                        outg();
+                        xianshic();
+                    }    else if ((c2 == 1 || c3 == 1 || c4 == 1) && count == 6 && c1 < 0 && c1 < 55) {
+                            c1 = 0;
+                            xianshic();
                             sujishu();//获得机会
                             qifei();//重新选择
-                        } else if (count == 6 && d1 < 0 && d1 < 55) {
-                                d1 = 1;
-                                xianshid();
+                        } else if (count == 6 && c1 < 0 && c1 < 55) {
+                                c1 = 1;
+                                xianshic();
+                                outg();
                                 sujishu();//获得机会
                                 qifei();//重新选择
-                            } else if (d1 == 55){
+                            } else if (c1 == 55){
                                     printf("已经到终点了喔！！\n");
                                     qifei();
                                 } else {
@@ -673,37 +678,40 @@ void qifei(void) {
                                     }
                 break;
             case 2:
-                 if(d2 >= 0 && d2 < 55 && count == 6) {
-                    if (d2 + count <= 55) {
-                        d2 += count;
-                        d2 += kiki(d2);
+                 if(c2 >= 0 && c2 < 55 && count == 6) {
+                    if (c2 + count <= 55) {
+                        c2 += count;
+                        c2 += kiki(c2);
                         } else {
-                            d2 = tianxing(d2);
+                            c2 = tianxing(c2);
                             }
                     win();
-                    xianshid();
+                    outg();
+                    xianshic();
                     sujishu();//获得机会
                     qifei();//重新选择
-                }  else if (d2 >= 0 && d2 < 55) {
-                    if (d2 + count < 55) {
-                        d2 += count;
-                        d2 += kiki(d2);
+                }  else if (c2 >= 0 && c2 < 55) {
+                    if (c2 + count < 55) {
+                        c2 += count;
+                        c2 += kiki(c2);
                         } else {
-                            d2 = tianxing(d2);
+                            c2 = tianxing(c2);
                             }
                         win();
-                        xianshid();
-                    }    else if ((d1 == 1 || d3 == 1 || d4 == 1) && count == 6 && d2 < 0 && d2 < 55) {
-                            d2 = 0;
-                            xianshid();
+                        outg();
+                        xianshic();
+                    }    else if ((c1 == 1 || c3 == 1 || c4 == 1) && count == 6 && c2 < 0 && c2 < 55) {
+                            c2 = 0;
+                            xianshic();
                             sujishu();//获得机会
                             qifei();//重新选择
-                        } else if (count == 6 && d2 < 0 && d2 < 55) {
-                                d2 = 1;
-                                xianshid();
+                        } else if (count == 6 && c2 < 0 && c2 < 55) {
+                                c2 = 1;
+                                xianshic();
+                                outg();
                                 sujishu();//获得机会
                                 qifei();//重新选择
-                            } else if (d2 == 55){
+                            } else if (c2 == 55){
                                     printf("已经到终点了喔！！\n");
                                     qifei();
                                 } else {
@@ -712,35 +720,40 @@ void qifei(void) {
                                     }
                 break;
             case 3:
-                 if(d3 >= 0 && d3 < 55 && count == 6) {
-                    if (d3 + count <= 55) {
-                        d3 += count;
-                        d3 += kiki(d3);
+                 if(c3 >= 0 && c3 < 55 && count == 6) {
+                    if (c3 + count <= 55) {
+                        c3 += count;
+                        c3 += kiki(c3);
                         } else {
-                            d3 = tianxing(d3);
+                            c3 = tianxing(c3);
                             }
                     win();
-                    xianshid();
+                    outg();
+                    xianshic();
                     sujishu();//获得机会
                     qifei();//重新选择
-                }  else if (d3 >= 0 && d3 < 55) {
-                    if (d3 + count <= 55) {
-                       d3 += count;
-                       d3 += kiki(d3);
+                }  else if (c3 >= 0 && c3 < 55) {
+                    if (c3 + count <= 55) {
+                       c3 += count;
+                       c3 += kiki(c3);
                         } else {
-                            d3 = tianxing(d3);
+                            c3 = tianxing(c3);
                             }
                         win();
-                        xianshid();
-                    }    else if ((d2 == 1 || d1 == 1 || d4 == 1) && count == 6 && d3 < 0 && d3 < 55) {
-                            d3 = 0;
+                        outg();
+                        xianshic();
+                    }    else if ((c2 == 1 || d1 == 1 || d4 == 1) && count == 6 && c3 < 0 && c3 < 55) {
+                            c3 = 0;
+                            xianshic();
                             sujishu();//获得机会
                             qifei();//重新选择
-                        } else if (count == 6 && d3 < 0 && 3 < 55) {
-                                b3 = 1;
+                        } else if (count == 6 && c3 < 0 && c3 < 55) {
+                                c3 = 1;
+                                 xianshic();
+                                 outg();
                                 sujishu();//获得机会
                                 qifei();//重新选择
-                            } else if (b3 == 55){
+                            } else if (c3 == 55){
                                     printf("已经到终点了喔！！\n");
                                     qifei();
                                 } else {
@@ -749,37 +762,40 @@ void qifei(void) {
                                     }
                 break;
             case 4:
-                 if(b4 >= 0 && b4 < 55 && count == 6) {
-                    if (b4 + count <= 55) {
-                        b4 += count;
-                        b4 += kiki(b4);
+                 if(c4 >= 0 && c4 < 55 && count == 6) {
+                    if (c4 + count <= 55) {
+                        c4 += count;
+                        c4 += kiki(c4);
                         } else {
-                            b4 = tianxing(b4);
+                            c4 = tianxing(c4);
                             }
                     win();
-                    xianshib();
+                    outg();
+                    xianshic();
                     sujishu();//获得机会
                     qifei();//重新选择
-                }  else if (b4 >= 0 && b4 < 55) {
-                    if (b4 + count <= 55) {
-                        b4 += count;
-                        kiki(b4);
+                }  else if (c4 >= 0 && c4 < 55) {
+                    if (c4 + count <= 55) {
+                        c4 += count;
+                        kiki(c4);
                         } else {
-                            b4 = tianxing(b4);
+                            c4 = tianxing(c4);
                             }
                         win();
-                        xianshib();
-                    }    else if ((b2 == 1 || b3 == 1 || b1 == 1) && count == 6 && b4 < 0 && b4 < 55) {
-                            b4 = 0;
-                            xianshib();
+                        outg();
+                        xianshic();
+                    }    else if ((c2 == 1 || c3 == 1 || c1 == 1) && count == 6 && c4 < 0 && c4 < 55) {
+                            c4 = 0;
+                            xianshic();
                             sujishu();//获得机会
                             qifei();//重新选择
-                        } else if (count == 6 && b4 < 0 && b4 < 55) {
-                                b4 = 1;
-                                xianshib();
+                        } else if (count == 6 && c4 < 0 && c4 < 55) {
+                                c4 = 1;
+                                xianshic();
+                                outg();
                                 sujishu();//获得机会
                                 qifei();//重新选择
-                            } else if (b4 == 55){
+                            } else if (c4 == 55){
                                     printf("已经到终点了喔！！\n");
                                     qifei();
                                 } else {
@@ -871,6 +887,9 @@ int tianxing(int a) {
 // 快捷区块
 int kiki(int ismo) {
     int honode, exeee = 1;
+    if (ismo == 13) {
+        return 25;
+    }
     for (honode = 1; honode <= 11; honode++) {
         exeee += 4;
        // printf("%d", exeee);
@@ -880,51 +899,50 @@ int kiki(int ismo) {
             }
         }
     if (ismo == 17) {
-        return 25;
+        return 25+4;
     }
     return 0;
     }
 
 void outg(int zi) {// green eat
     // eat yellow
-    if (zi - 13 == d1 && d1 <= 49) {
+    if ((zi - 13 == d1 || d1 - 39 == zi) && d1 <= 49 &&  d1 > 0) {
         d1 = 0;
         printf("eat yellow1 for green\n");
-    } else if (zi - 13 == d2 && d2 <= 49) {
+    } else if ((zi - 13 == d2 || d2 - 39 == zi) && d2 <= 49 && d2 > 0) {
                 d2 = 0;
                 printf("eat yellow2 for green\n");
-            } else if (zi - 13 == d3 && d3 <= 49) {
+            } else if ((zi - 13 == d3 || d3 - 39 == zi) && d3 <= 49 && d3 > 0) {
                     d3 = 0;
                     printf("eat yellow3 for green\n");
-                    } else if (zi - 13 == d4 && d4 <= 49) {
+                    } else if ((zi - 13 == d4 || d4 - 39 == zi) && d4 <= 49 && d4 > 0) {
                             d4 = 0;
                             printf("eat yellow4 for green\n");
                             } //eat red
-    if (zi - 26 == a1 && a1 <= 49) {
+    if ((zi - 26 == a1 || a1 - 26 == zi) && a1 <= 49 && a1 > 0) {
         a1 = 0;
         printf("eat red1 for green\n");
-    } else if (zi - 26 == a2 && a2 <= 49) {
+    } else if ((zi - 26 == a2 || a2 - 39 == zi) && a2 <= 49 && a2 > 0) {
                 a2 = 0;
                 printf("eat red2 for green\n");
-            } else if (zi - 26 == a3 && a3 <= 49) {
+            } else if ((zi - 26 == a3 || a3 - 26 == a3) && a3 <= 49 && a3 > 0) {
                         a3 = 0;
                         printf("eat red3 for green\n");
-                    } else if (zi - 26 == a4 && a4 <= 49) {
+                    } else if ((zi - 26 == a4 || a4 - 26 == zi) && a4 <= 49 && a4 > 0) {
                             a4 = 0;
                             printf("eat red4 for green\n");
                             }// eat blue
-    if (zi - 39 == b1 && b1 <= 49) {
+    if ((zi - 39 == b1 || b1 - 13 == zi) && b1 <= 49 && b1 > 0) {
         b1 = 0;
         printf("eat blue1 for green\n");
-    } else if (zi - 39 == b2 && b2 <= 49) {
+    } else if ((zi - 39 == b2 || b2 - 13 == zi) && b2 <= 49 && b2 > 0) {
             b2 = 0;
             printf("eat blue2 for green\n");
-            } else if (zi - 39 == b3 && b3 <= 49) {
+            } else if ((zi - 39 == b3 || b3 - 13 == zi) && b3 <= 49 && b3 > 0 {
                     b3 = 0;
                     printf("eat blue3 for green\n");
-                    } else if (zi - 39 == b4 && b4 <= 49) {
+                    } else if ((zi - 39 == b4 || b4 - 16 == zi) && b4 <= 49 && b4 > 0) {
                             b4 = 0;
                             printf("eat blue4 for green\n");
                             }
 }
-
